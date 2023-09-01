@@ -1,5 +1,6 @@
 import pandas as pd
 
+
 def feature_to_xlsx(feature_file, xlsx_file):
     #feature_file = 'Emissao-SomenteIda-Logado.feature'
     with open(feature_file, 'r') as file:
@@ -19,7 +20,7 @@ def feature_to_xlsx(feature_file, xlsx_file):
                 df = df.append({"Cenário": scenario, "Passos": "\n".join(steps)}, ignore_index=True)
             scenario = line.replace("Scenario:", "").strip()
             steps = []
-        elif line.startswith(("Given", "When", "Then", "And", "But")):
+        elif line.startswith(("Dado", "Quando", "Então", "E", "Mas")):
             steps.append(line)
 
     # Adiciona o último cenário ao DataFrame
