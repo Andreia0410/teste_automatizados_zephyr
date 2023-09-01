@@ -1,6 +1,7 @@
 import pandas as pd
 
 def feature_to_xlsx(feature_file, xlsx_file):
+    #feature_file = 'Emissao-SomenteIda-Logado.feature'
     with open(feature_file, 'r') as file:
         lines = file.readlines()
 
@@ -28,4 +29,6 @@ def feature_to_xlsx(feature_file, xlsx_file):
     # Salva o DataFrame como um arquivo .xlsx
     df.to_excel(xlsx_file, index=False, engine='openpyxl')
 
-feature_to_xlsx('seu_arquivo.feature', 'saida.xlsx')
+
+file  = feature_to_xlsx('Emissao-SomenteIda-Logado.feature', 'saida.xlsx')
+print(file)
